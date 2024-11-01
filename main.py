@@ -1,7 +1,10 @@
 import re
 import sys
+from functools import partial
 
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTextEdit, QPushButton, QVBoxLayout, QWidget, QHBoxLayout
+from PyQt5.QtCore import QTimer
+from PyQt5.QtWidgets import QApplication, QMainWindow, QTextEdit, QPushButton, QVBoxLayout, QWidget, QHBoxLayout, \
+    QLineEdit
 
 
 class MainWindow(QMainWindow):
@@ -24,105 +27,107 @@ class MainWindow(QMainWindow):
         self.fr_flag=False
 
         # 调用initUI方法来初始化用户界面，确保界面元素被正确设置
-        self.text_edit_second = None
-        self.button_up = None
-        self.button_low=None
-        self.text_edit_first = None
+        self.result_text_edit = None
+        self.upper_button = None
+        self.lower_button=None
+        self.main_text_edit = None
 
         # 帆软部分
-        self.fr_date=None
-        self.fr_toggle=None
+        self.fr_date_input=None
+        self.fr_toggle_button=None
 
         self.initUI()
+
+        self.timer = QTimer(self)
+        self.timer.setInterval(500)  # 500毫秒
+        self.timer.timeout.connect(self.input_valid)
+        self.main_text_edit.textChanged.connect(self.start_timer)
 
     def initUI(self):
         """
         初始化用户界面。
-
-        设置窗口标题和尺寸，创建文本编辑区和按钮，并连接按钮点击事件到行数统计方法。
+        设置窗口标题和尺寸，创建文本编辑区和按钮，并连接按钮点击事件到相应的处理方法。
         最后，将这些组件添加到布局中，并将布局设置为中央小部件。
         """
         # 设置窗口标题
         self.setWindowTitle('SQL CHANGE')
         # 设置窗口的位置和大小
         self.setGeometry(100, 100, 400, 300)
+        # 创建主文本编辑区
+        self.main_text_edit = QTextEdit(self)
+        self.main_text_edit.textChanged.connect(self.start_timer)
 
-        # 创建文本编辑区
-        self.text_edit_first = QTextEdit(self)
-        self.text_edit_first.textChanged.connect(self.input_valid)
-        # 创建按钮，并连接点击事件到统计行数的方法
-        self.button_up = QPushButton('UPPER', self)
-        self.button_up.clicked.connect(self.to_upper)
-
-        # 创建按钮
-        self.button_low = QPushButton('LOWER', self)
-        self.button_low.clicked.connect(self.to_lower)
-
-        # 创建一个label
-        self.text_edit_second = QTextEdit(self)
-        self.text_edit_second.setText('hello')
-
+        # 创建大写转换按钮，并连接点击事件到大写转换方法
+        self.upper_button = QPushButton('UPPER', self)
+        self.upper_button.clicked.connect(self.to_upper)
+        # 创建小写转换按钮，并连接点击事件到小写转换方法
+        self.lower_button = QPushButton('LOWER', self)
+        self.lower_button.clicked.connect(self.to_lower)
+        # 创建结果显示文本编辑区
+        self.result_text_edit = QTextEdit(self)
+        self.result_text_edit.setText('hello')
         # 创建垂直布局
-        layout = QVBoxLayout()
-        # 将文本编辑区和按钮添加到布局中
-        layout.addWidget(self.text_edit_first)
-
-        # 大小写转换按钮
-        layout_btn=QHBoxLayout()
-        layout_btn.addWidget(self.button_up)
-        layout_btn.addWidget(self.button_low)
-        layout.addLayout(layout_btn)
-
-        # 转换为帆软部分、转换回帆软部分
-        layout_fr=QHBoxLayout()
-        # 帆软日期 提示写入日期格式
-        self.fr_date=QTextEdit(self)
-        self.fr_date.setMaximumHeight(28)
-        self.fr_date.setPlaceholderText("yyyy-mm-dd")
-        layout_fr.addWidget(self.fr_date)
-        self.fr_toggle=QPushButton('转帆软', self)
-        self.fr_toggle.clicked.connect(lambda: self.fr_toggle_change(self.fr_flag))
-
-
-        layout_fr.addWidget(self.fr_toggle)
-        layout.addLayout(layout_fr)
-
-
-
-        layout.addWidget(self.text_edit_second)
-
+        main_layout = QVBoxLayout()
+        # 将主文本编辑区添加到布局中
+        main_layout.addWidget(self.main_text_edit)
+        # 创建大写和小写转换按钮的水平布局
+        button_layout = QHBoxLayout()
+        button_layout.addWidget(self.upper_button)
+        button_layout.addWidget(self.lower_button)
+        main_layout.addLayout(button_layout)
+        # 创建帆软日期输入框和转换按钮的水平布局
+        fr_layout = QHBoxLayout()
+        # 帆软日期输入框
+        self.fr_date_input = QLineEdit(self)
+        # self.fr_date_input.setMaximumHeight(28)
+        self.fr_date_input.setPlaceholderText("yyyy-mm-dd")
+        fr_layout.addWidget(self.fr_date_input)
+        # 帆软转换按钮
+        self.fr_toggle_button = QPushButton('转帆软', self)
+        self.fr_toggle_button.clicked.connect(partial(self.fr_toggle_change, self.fr_flag))
+        fr_layout.addWidget(self.fr_toggle_button)
+        main_layout.addLayout(fr_layout)
+        # 将结果显示文本编辑区添加到布局中
+        main_layout.addWidget(self.result_text_edit)
         # 创建一个容器小部件，并设置其布局为之前创建的布局
         container = QWidget()
-        container.setLayout(layout)
+        container.setLayout(main_layout)
         # 将容器设置为中央小部件
         self.setCentralWidget(container)
+
+        # self.main_text_edit.textChanged.disconnect(self.input_valid)
+        # self.main_text_edit.textChanged.connect(self.start_timer)
+
+    def start_timer(self):
+        self.timer.start()
+
 
     def input_valid(self):
         """
         检查输入
         """
-        text=self.text_edit_first.toPlainText()
+        text=self.main_text_edit.toPlainText()
 
         # 检查text中是否包含${}
         if '${' in text:
             self.fr_flag=True
-            self.fr_toggle.setText('转回SQL')
+            self.fr_toggle_button.setText('转回SQL')
         else:
             self.fr_flag = False
-            self.fr_toggle.setText('转为帆软')
+            self.fr_toggle_button.setText('转为帆软')
 
 
     def to_upper(self):
-        text = self.text_edit_first.toPlainText()
+        text = self.main_text_edit.toPlainText()
         # line_count = len(text.split('\n'))
         # print(f'Line count: {line_count}')
-        self.text_edit_second.setText(text.upper())
+        self.result_text_edit.setText(text.upper())
 
     def to_lower(self):
-        text = self.text_edit_first.toPlainText()
+        text = self.main_text_edit.toPlainText()
         # line_count = len(text.split('\n'))
         # print(f'Line count: {line_count}')
-        self.text_edit_second.setText(text.lower())
+        self.result_text_edit.setText(text.lower())
 
     def fr_toggle_change(self, flag):
         """
@@ -130,8 +135,8 @@ class MainWindow(QMainWindow):
         :param flag:
         :return:
         """
-        if self.fr_date.toPlainText()=='':
-            text = self.text_edit_first.toPlainText()
+        if self.fr_date_input.text()=='':
+            text = self.main_text_edit.toPlainText()
             # 提取 text 中的第一个日期
             # 定义正则表达式模式
             date_pattern = r'\d{4}-\d{2}-\d{2}'
@@ -141,19 +146,19 @@ class MainWindow(QMainWindow):
             print(dates)
 
             if len(dates) > 0:
-                self.fr_date.setText(dates[0])
-                self.text_edit_second.setText('日期不能为空,确认预测日期无误后再次点击')
+                self.fr_date_input.setText(dates[0])
+                self.result_text_edit.setText('日期不能为空,确认预测日期无误后再次点击')
             else:
                 print('未找到日期')
-                self.text_edit_second.setText('日期不能为空,且未找到日期')
+                self.result_text_edit.setText('日期不能为空,且未找到日期')
 
             return
 
-        yyyy_mm_dd=self.fr_date.toPlainText()
+        yyyy_mm_dd=self.fr_date_input.toPlainText()
         yyyymmdd=yyyy_mm_dd.replace('-', '')
         yyyy=yyyy_mm_dd[0:4]
 
-        text:str=self.text_edit_first.toPlainText()
+        text:str=self.main_text_edit.toPlainText()
 
         if flag:
             pass
@@ -161,7 +166,7 @@ class MainWindow(QMainWindow):
             text=text.replace(yyyy_mm_dd,'${dt}')
             text=text.replace(yyyymmdd,'${format(dt,"yyyyMMdd")}')
             text=text.replace(yyyy,'${format(dt,"yyyy")}')
-            self.text_edit_second.setText(text)
+            self.result_text_edit.setText(text)
 
 
 
