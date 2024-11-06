@@ -2,10 +2,10 @@ import re
 from functools import partial
 
 from PyQt5.QtCore import QTimer
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QPushButton, QAction, QTextEdit, QHBoxLayout, QLineEdit, \
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QPushButton, QTextEdit, QHBoxLayout, QLineEdit, \
     QStackedWidget
 
-from common_utils import send_notification
+from utils.common_utils import send_notification
 
 
 class TextPage(QWidget):

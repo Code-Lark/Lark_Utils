@@ -1,10 +1,10 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTabWidget, QWidget, QVBoxLayout, QLabel, QPushButton, QMenuBar, \
-    QAction, QDialog, QVBoxLayout, QLabel, QPushButton, QMessageBox, QStackedWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QAction, QDialog, QVBoxLayout, QLabel, QPushButton, \
+    QStackedWidget
 
-from page.date_page import DatePage
-from page.text_page import TextPage
-from page.sql_page import SqlPage
+from page.tool_menu.date_page import DatePage
+from page.tool_menu.text_page import TextPage
+from page.tool_menu.sql_page import SqlPage
 
 
 class HomePage(QMainWindow):
