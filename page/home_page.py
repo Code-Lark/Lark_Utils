@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QTabWidget, QWidget, QVBo
     QAction, QDialog, QVBoxLayout, QLabel, QPushButton, QMessageBox, QStackedWidget
 
 from page.date_page import DatePage
-from page.file_page import FilePage
+from page.text_page import TextPage
 from page.sql_page import SqlPage
 
 
@@ -69,7 +69,7 @@ class HomePage(QMainWindow):
         self.create_tool_menu(menubar)
 
         # 创建两个页面
-        text_page = FilePage(self.stacked_widget)
+        text_page = TextPage(self.stacked_widget)
         date_page = DatePage(self.stacked_widget)
         sql_page = SqlPage(self.stacked_widget)
 
