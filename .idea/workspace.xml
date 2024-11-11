@@ -4,22 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a7ff478-d48c-4935-aba3-1c77be64c4cb" name="更改" comment="refactor(gui): 重构 GUI应用程序结构&#10;&#10;- 创建新的 TextPage 类，将文本处理功能从 MainWindow 中分离&#10;- 新增 __init__.py 文件，初始化日志记录- 修改 home_page.py，使用新的 TextPage 类&#10;- 重写 main.py，使用新的 HomePage 类- 新增 text_page.py 文件，定义 TextPage 类">
-      <change afterPath="$PROJECT_DIR$/res/img/Ship.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/img/Ship.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/img/tolowercase.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/img/touppercase.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/tool_menu/__init__.py" afterDir="false" />
+    <list default="true" id="7a7ff478-d48c-4935-aba3-1c77be64c4cb" name="更改" comment="refactor(gui): 重构 GUI应用程序结构&#10;&#10;- 创建新的 TextPage 类，将文本处理功能从 MainWindow 中分离&#10;- 新增 __init__.py 文件，初始化日志记录&#10;- 修改 home_page.py，使用新的 TextPage 类&#10;- 重写 main.py，使用新的 HomePage 类&#10;- 新增 text_page.py 文件，定义 TextPage 类- 添加工具栏功能，实现文本大小写转换&#10;- 优化菜单栏，增加查看菜单">
+      <change afterPath="$PROJECT_DIR$/highlighter/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/highlighter/python_highlighter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/highlighter/sql_highlighter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/img/CSS3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/img/HTML5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/img/JavaScript.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/img/Python.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/img/doc_plaintext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/img/php.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/img/sql.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/tool_bar/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/tool_bar/code_tool_bar_ui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/edit_menu/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/edit_menu/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/file_menu/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/file_menu/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/home_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/home_ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/tool_menu/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/tool_bar_ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/tool_menu/date_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/tool_menu/date_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/tool_menu/sql_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/tool_menu/sql_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/tool_menu/text_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/tool_menu/text_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/home_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/home_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/tool_bar_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/tool_bar/text_tool_bar_ui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,22 +59,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.home_page.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
-    "last_opened_file_path": "/home/lark/PycharmProjects/Lark_Utils/res/img",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.home_page.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/lark/PycharmProjects/Lark_Utils/res/img&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/res/img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ui/tool_bar" />
       <recent name="$PROJECT_DIR$/utils" />
       <recent name="$PROJECT_DIR$/page/tool_menu" />
     </key>
@@ -225,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730862763087</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="refactor(gui): 重构 GUI应用程序结构&#10;&#10;- 创建新的 TextPage 类，将文本处理功能从 MainWindow 中分离&#10;- 新增 __init__.py 文件，初始化日志记录&#10;- 修改 home_page.py，使用新的 TextPage 类&#10;- 重写 main.py，使用新的 HomePage 类&#10;- 新增 text_page.py 文件，定义 TextPage 类- 添加工具栏功能，实现文本大小写转换&#10;- 优化菜单栏，增加查看菜单">
+      <option name="closed" value="true" />
+      <created>1731295349097</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731295349097</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -260,6 +269,18 @@
     <MESSAGE value="feat(page): 添加首页模块&#10;&#10;- 创建 HomePage 类，继承 QMainWindow&#10;- 实现了基本的窗口布局和菜单栏功能&#10;- 添加了三个标签页和对应的切换功能&#10;- 增加了新建对话框的功能&#10;- 集成了 date_page、file_page 和 sql_page模块" />
     <MESSAGE value="refactor(gui): 重构 GUI应用程序结构&#10;&#10;- 创建新的 TextPage 类，将文本处理功能从 MainWindow 中分离&#10;- 新增 __init__.py 文件，初始化日志记录&#10;- 修改 home_page.py，使用新的 TextPage 类&#10;- 重写 main.py，使用新的 HomePage 类&#10;- 新增 text_page.py 文件，定义 TextPage 类" />
     <MESSAGE value="refactor(gui): 重构 GUI应用程序结构&#10;&#10;- 创建新的 TextPage 类，将文本处理功能从 MainWindow 中分离&#10;- 新增 __init__.py 文件，初始化日志记录- 修改 home_page.py，使用新的 TextPage 类&#10;- 重写 main.py，使用新的 HomePage 类- 新增 text_page.py 文件，定义 TextPage 类" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(gui): 重构 GUI应用程序结构&#10;&#10;- 创建新的 TextPage 类，将文本处理功能从 MainWindow 中分离&#10;- 新增 __init__.py 文件，初始化日志记录- 修改 home_page.py，使用新的 TextPage 类&#10;- 重写 main.py，使用新的 HomePage 类- 新增 text_page.py 文件，定义 TextPage 类" />
+    <MESSAGE value="refactor(gui): 重构 GUI应用程序结构&#10;&#10;- 创建新的 TextPage 类，将文本处理功能从 MainWindow 中分离&#10;- 新增 __init__.py 文件，初始化日志记录&#10;- 修改 home_page.py，使用新的 TextPage 类&#10;- 重写 main.py，使用新的 HomePage 类&#10;- 新增 text_page.py 文件，定义 TextPage 类- 添加工具栏功能，实现文本大小写转换&#10;- 优化菜单栏，增加查看菜单" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(gui): 重构 GUI应用程序结构&#10;&#10;- 创建新的 TextPage 类，将文本处理功能从 MainWindow 中分离&#10;- 新增 __init__.py 文件，初始化日志记录&#10;- 修改 home_page.py，使用新的 TextPage 类&#10;- 重写 main.py，使用新的 HomePage 类&#10;- 新增 text_page.py 文件，定义 TextPage 类- 添加工具栏功能，实现文本大小写转换&#10;- 优化菜单栏，增加查看菜单" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test.py</url>
+          <line>3</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

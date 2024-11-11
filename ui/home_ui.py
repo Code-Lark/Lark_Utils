@@ -1,11 +1,10 @@
 import sys
-from tabnanny import check
 
-from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QAction, QDialog, QVBoxLayout, QLabel, QPushButton, \
     QStackedWidget
 
-from ui.tool_bar_ui import TextToolbar
+from ui.tool_bar.code_tool_bar_ui import CodeToolbar
+from ui.tool_bar.text_tool_bar_ui import TextToolbar
 from ui.tool_menu.date_ui import DatePage
 from ui.tool_menu.text_ui import TextPage
 from ui.tool_menu.sql_ui import SqlPage
@@ -16,6 +15,7 @@ class HomePage(QMainWindow):
         super().__init__()
 
         self.text_toolbar = None
+        self.code_toolbar = None
         self.stacked_widget = None
         self.initUI()
 
@@ -28,6 +28,12 @@ class HomePage(QMainWindow):
 
         # 创建工具栏
         self.create_tool_bar()
+
+        # 设置制表符的宽度
+        tab_stop_width = 4 * self.stacked_widget.currentWidget().main_text_edit.fontMetrics().averageCharWidth()
+        text_option = self.stacked_widget.currentWidget().main_text_edit.document().defaultTextOption()
+        text_option.setTabStopDistance(tab_stop_width)
+        self.stacked_widget.currentWidget().main_text_edit.document().setDefaultTextOption(text_option)
 
 
         # 设置窗口属性
@@ -91,7 +97,7 @@ class HomePage(QMainWindow):
         file_menu = menubar.addMenu('文件')
 
     def create_check_menu(self, menubar):
-        # 创建编辑菜单
+        # 创建查看菜单
         edit_menu = menubar.addMenu('查看')
 
         # 创建编辑菜单中的动作
@@ -99,21 +105,29 @@ class HomePage(QMainWindow):
         view_text_tool_action.setStatusTip('显示/隐藏文本工具栏')
         view_text_tool_action.setChecked(True)
         view_text_tool_action.triggered.connect(self.toggle_text_tool_bar)
-        # paste_action = QAction('粘贴', self)
-        # cut_action = QAction('剪切', self)
+
+        view_code_tool_action = QAction('代码工具栏', self,checkable=True)
+        view_code_tool_action.setStatusTip('显示/隐藏代码工具栏')
+        view_code_tool_action.setChecked(True)
+        view_code_tool_action.triggered.connect(self.toggle_code_tool_bar)
+
 
         # 将动作添加到编辑菜单
         edit_menu.addAction(view_text_tool_action)
-        # edit_menu.addAction(paste_action)
-        # edit_menu.addAction(cut_action)
+        edit_menu.addAction(view_code_tool_action)
 
     def toggle_text_tool_bar(self, flag):
         if flag:
             self.text_toolbar.show()
-            print(flag)
         else:
             self.text_toolbar.hide()
+
+    def toggle_code_tool_bar(self, flag):
+        if flag:
+            self.code_toolbar.show()
             print(flag)
+        else:
+            self.code_toolbar.hide()
 
     def create_tool_menu(self, menubar):
         # 创建工具菜单
@@ -130,6 +144,9 @@ class HomePage(QMainWindow):
         """
         self.text_toolbar=TextToolbar(self)
         self.addToolBar(self.text_toolbar)
+
+        self.code_toolbar=CodeToolbar(self)
+        self.addToolBar(self.code_toolbar)
 
 
 
