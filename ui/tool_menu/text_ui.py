@@ -70,12 +70,6 @@ class TextPage(QWidget):
         self.main_text_edit = QTextEdit(self)
         self.main_text_edit.textChanged.connect(self.start_timer)
 
-        # 创建大写转换按钮，并连接点击事件到大写转换方法
-        self.upper_button = QPushButton('UPPER', self)
-        self.upper_button.clicked.connect(self.to_upper)
-        # 创建小写转换按钮，并连接点击事件到小写转换方法
-        self.lower_button = QPushButton('LOWER', self)
-        self.lower_button.clicked.connect(self.to_lower)
         # 创建结果显示文本编辑区
         self.result_text_edit = QTextEdit(self)
         self.result_text_edit.setText('hello')
@@ -83,11 +77,6 @@ class TextPage(QWidget):
         main_layout = QVBoxLayout()
         # 将主文本编辑区添加到布局中
         main_layout.addWidget(self.main_text_edit)
-        # 创建大写和小写转换按钮的水平布局
-        button_layout = QHBoxLayout()
-        button_layout.addWidget(self.upper_button)
-        button_layout.addWidget(self.lower_button)
-        main_layout.addLayout(button_layout)
         # 创建帆软日期输入框和转换按钮的水平布局
         fr_layout = QHBoxLayout()
         # 帆软日期输入框
@@ -122,20 +111,6 @@ class TextPage(QWidget):
         else:
             self.fr_flag = False
             self.fr_toggle_button.setText('转为帆软')
-
-    def to_upper(self):
-        text = self.main_text_edit.toPlainText()
-        # line_count = len(text.split('\n'))
-        # print(f'Line count: {line_count}')
-        self.result_text_edit.setText(text.upper())
-
-        send_notification('Hello', 'This is a test notification!')
-
-    def to_lower(self):
-        text = self.main_text_edit.toPlainText()
-        # line_count = len(text.split('\n'))
-        # print(f'Line count: {line_count}')
-        self.result_text_edit.setText(text.lower())
 
     def fr_toggle_change(self, flag):
         """

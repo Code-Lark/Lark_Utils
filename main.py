@@ -2,7 +2,7 @@ import sys
 
 from PyQt5.QtWidgets import QApplication
 
-from page.home_page import HomePage
+from ui.home_ui import HomePage
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

@@ -1,16 +1,21 @@
 import sys
+from tabnanny import check
+
+from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QAction, QDialog, QVBoxLayout, QLabel, QPushButton, \
     QStackedWidget
 
-from page.tool_menu.date_page import DatePage
-from page.tool_menu.text_page import TextPage
-from page.tool_menu.sql_page import SqlPage
+from ui.tool_bar_ui import TextToolbar
+from ui.tool_menu.date_ui import DatePage
+from ui.tool_menu.text_ui import TextPage
+from ui.tool_menu.sql_ui import SqlPage
 
 
 class HomePage(QMainWindow):
     def __init__(self):
         super().__init__()
 
+        self.text_toolbar = None
         self.stacked_widget = None
         self.initUI()
 
@@ -21,8 +26,12 @@ class HomePage(QMainWindow):
         # 创建菜单栏
         self.create_menu_bar()
 
+        # 创建工具栏
+        self.create_tool_bar()
+
+
         # 设置窗口属性
-        self.setWindowTitle('PyQt5 Tabbed Window')
+        self.setWindowTitle('Lark_Utils')
         self.setGeometry(100, 100, 800, 600)
 
     def create_tabs(self):
@@ -64,7 +73,7 @@ class HomePage(QMainWindow):
         self.create_file_menu(menubar)
 
         # 创建编辑菜单
-        self.create_edit_menu(menubar)
+        self.create_check_menu(menubar)
 
         self.create_tool_menu(menubar)
 
@@ -81,19 +90,30 @@ class HomePage(QMainWindow):
         # 创建文件菜单
         file_menu = menubar.addMenu('文件')
 
-    def create_edit_menu(self, menubar):
+    def create_check_menu(self, menubar):
         # 创建编辑菜单
-        edit_menu = menubar.addMenu('编辑')
+        edit_menu = menubar.addMenu('查看')
 
         # 创建编辑菜单中的动作
-        copy_action = QAction('复制', self)
-        paste_action = QAction('粘贴', self)
-        cut_action = QAction('剪切', self)
+        view_text_tool_action = QAction('文本工具栏', self,checkable=True)
+        view_text_tool_action.setStatusTip('显示/隐藏文本工具栏')
+        view_text_tool_action.setChecked(True)
+        view_text_tool_action.triggered.connect(self.toggle_text_tool_bar)
+        # paste_action = QAction('粘贴', self)
+        # cut_action = QAction('剪切', self)
 
         # 将动作添加到编辑菜单
-        edit_menu.addAction(copy_action)
-        edit_menu.addAction(paste_action)
-        edit_menu.addAction(cut_action)
+        edit_menu.addAction(view_text_tool_action)
+        # edit_menu.addAction(paste_action)
+        # edit_menu.addAction(cut_action)
+
+    def toggle_text_tool_bar(self, flag):
+        if flag:
+            self.text_toolbar.show()
+            print(flag)
+        else:
+            self.text_toolbar.hide()
+            print(flag)
 
     def create_tool_menu(self, menubar):
         # 创建工具菜单
@@ -102,6 +122,16 @@ class HomePage(QMainWindow):
         tool_menu.addAction('文本', lambda: self.stacked_widget.setCurrentIndex(0))
         tool_menu.addAction('日期', lambda: self.stacked_widget.setCurrentIndex(1))
         tool_menu.addAction('SQL', lambda: self.stacked_widget.setCurrentIndex(2))
+
+    def create_tool_bar(self):
+        """
+        创建工具栏
+        :return:
+        """
+        self.text_toolbar=TextToolbar(self)
+        self.addToolBar(self.text_toolbar)
+
+
 
 
     def show_new_dialog(self):

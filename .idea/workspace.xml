@@ -4,13 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a7ff478-d48c-4935-aba3-1c77be64c4cb" name="更改" comment="refactor(gui): 重构 GUI应用程序结构&#10;&#10;- 创建新的 TextPage 类，将文本处理功能从 MainWindow 中分离&#10;- 新增 __init__.py 文件，初始化日志记录&#10;- 修改 home_page.py，使用新的 TextPage 类&#10;- 重写 main.py，使用新的 HomePage 类&#10;- 新增 text_page.py 文件，定义 TextPage 类">
-      <change afterPath="$PROJECT_DIR$/common_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/page/date_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/page/sql_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Lark_Utils.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Lark_Utils.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7a7ff478-d48c-4935-aba3-1c77be64c4cb" name="更改" comment="refactor(gui): 重构 GUI应用程序结构&#10;&#10;- 创建新的 TextPage 类，将文本处理功能从 MainWindow 中分离&#10;- 新增 __init__.py 文件，初始化日志记录- 修改 home_page.py，使用新的 TextPage 类&#10;- 重写 main.py，使用新的 HomePage 类- 新增 text_page.py 文件，定义 TextPage 类">
+      <change afterPath="$PROJECT_DIR$/res/img/Ship.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/img/Ship.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/img/tolowercase.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/img/touppercase.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/tool_menu/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/edit_menu/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/edit_menu/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/file_menu/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/file_menu/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/home_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/home_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/tool_menu/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/tool_bar_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/tool_menu/date_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/tool_menu/date_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/tool_menu/sql_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/tool_menu/sql_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/tool_menu/text_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/tool_menu/text_page.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +47,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/page/home_page.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -54,11 +66,21 @@
     "Python.test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "dev",
+    "last_opened_file_path": "/home/lark/PycharmProjects/Lark_Utils/res/img",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$/page/tool_menu" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="home_page" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="home_ui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Lark_Utils" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -71,7 +93,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/page/home_page.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/page/home_ui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -126,8 +148,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.home_page" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.home_ui" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730862212193</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="refactor(gui): 重构 GUI应用程序结构&#10;&#10;- 创建新的 TextPage 类，将文本处理功能从 MainWindow 中分离&#10;- 新增 __init__.py 文件，初始化日志记录- 修改 home_page.py，使用新的 TextPage 类&#10;- 重写 main.py，使用新的 HomePage 类- 新增 text_page.py 文件，定义 TextPage 类">
+      <option name="closed" value="true" />
+      <created>1730862763087</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1730862763087</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -229,6 +259,7 @@
     <MESSAGE value="refactor(main): 重构主界面布局和逻辑&#10;&#10;- 优化了界面布局，使用 QVBoxLayout 和 QHBoxLayout组织界面元素&#10;- 重命名了部分变量，使其更具描述性&#10;- 添加了定时器功能，用于延迟验证输入&#10;-改进了帆软日期输入，使用 QLineEdit 替代 QTextEdit&#10;- 优化了代码结构，提高了可读性和可维护性" />
     <MESSAGE value="feat(page): 添加首页模块&#10;&#10;- 创建 HomePage 类，继承 QMainWindow&#10;- 实现了基本的窗口布局和菜单栏功能&#10;- 添加了三个标签页和对应的切换功能&#10;- 增加了新建对话框的功能&#10;- 集成了 date_page、file_page 和 sql_page模块" />
     <MESSAGE value="refactor(gui): 重构 GUI应用程序结构&#10;&#10;- 创建新的 TextPage 类，将文本处理功能从 MainWindow 中分离&#10;- 新增 __init__.py 文件，初始化日志记录&#10;- 修改 home_page.py，使用新的 TextPage 类&#10;- 重写 main.py，使用新的 HomePage 类&#10;- 新增 text_page.py 文件，定义 TextPage 类" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(gui): 重构 GUI应用程序结构&#10;&#10;- 创建新的 TextPage 类，将文本处理功能从 MainWindow 中分离&#10;- 新增 __init__.py 文件，初始化日志记录&#10;- 修改 home_page.py，使用新的 TextPage 类&#10;- 重写 main.py，使用新的 HomePage 类&#10;- 新增 text_page.py 文件，定义 TextPage 类" />
+    <MESSAGE value="refactor(gui): 重构 GUI应用程序结构&#10;&#10;- 创建新的 TextPage 类，将文本处理功能从 MainWindow 中分离&#10;- 新增 __init__.py 文件，初始化日志记录- 修改 home_page.py，使用新的 TextPage 类&#10;- 重写 main.py，使用新的 HomePage 类- 新增 text_page.py 文件，定义 TextPage 类" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(gui): 重构 GUI应用程序结构&#10;&#10;- 创建新的 TextPage 类，将文本处理功能从 MainWindow 中分离&#10;- 新增 __init__.py 文件，初始化日志记录- 修改 home_page.py，使用新的 TextPage 类&#10;- 重写 main.py，使用新的 HomePage 类- 新增 text_page.py 文件，定义 TextPage 类" />
   </component>
 </project>
