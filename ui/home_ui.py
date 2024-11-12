@@ -1,5 +1,7 @@
 import sys
 
+from PyQt5.QtCore import Qt, QEvent
+from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QAction, QDialog, QVBoxLayout, QLabel, QPushButton, \
     QStackedWidget
 
@@ -14,6 +16,7 @@ class HomePage(QMainWindow):
     def __init__(self):
         super().__init__()
 
+        self.font_size = None
         self.text_toolbar = None
         self.code_toolbar = None
         self.stacked_widget = None
@@ -35,10 +38,30 @@ class HomePage(QMainWindow):
         text_option.setTabStopDistance(tab_stop_width)
         self.stacked_widget.currentWidget().main_text_edit.document().setDefaultTextOption(text_option)
 
+        # 设置初始字体大小
+        self.font_size = 12
+        self.update_font_size()
+        # 捕获鼠标滚轮事件
+        self.stacked_widget.currentWidget().main_text_edit.viewport().installEventFilter(self)
 
         # 设置窗口属性
         self.setWindowTitle('Lark_Utils')
         self.setGeometry(100, 100, 800, 600)
+
+    def update_font_size(self):
+        font = QFont("Arial", self.font_size)
+        self.stacked_widget.currentWidget().main_text_edit.setFont(font)
+
+    def eventFilter(self, source, event):
+        if event.type() == QEvent.Wheel and event.modifiers() == Qt.ControlModifier:
+            if event.angleDelta().y() > 0:
+                self.font_size += 1
+            else:
+                self.font_size -= 1
+            self.font_size = max(1, self.font_size)  # 确保字体大小不小于1
+            self.update_font_size()
+            return True
+        return super().eventFilter(source, event)
 
     def create_tabs(self):
         # 创建第一个标签页

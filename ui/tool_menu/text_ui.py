@@ -94,8 +94,6 @@ class TextPage(QWidget):
         # 创建一个容器小部件，并设置其布局为之前创建的布局
 
         self.setLayout(main_layout)
-        # 将容器设置为中央小部件
-        # self.setCentralWidget(container)
 
 
     def input_valid(self):
