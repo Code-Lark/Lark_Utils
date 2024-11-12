@@ -137,7 +137,7 @@ class TextPage(QWidget):
 
             return
 
-        yyyy_mm_dd=self.fr_date_input.toPlainText()
+        yyyy_mm_dd=self.fr_date_input.text()
         yyyymmdd=yyyy_mm_dd.replace('-', '')
         yyyy=yyyy_mm_dd[0:4]
 
