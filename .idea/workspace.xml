@@ -4,13 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a7ff478-d48c-4935-aba3-1c77be64c4cb" name="更改" comment="feat(gui): 添加代码工具栏并实现语法高亮&#10;&#10;- 新增 CodeToolbar 类，提供 Python 和 SQL 代码的语法高亮功能- 在主界面添加代码工具栏，支持切换语法高亮模式- 实现了 Python 和 SQL语法高亮的具体逻辑&#10;-优化了菜单栏，增加了查看菜单以控制工具栏的显示">
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+    <list default="true" id="7a7ff478-d48c-4935-aba3-1c77be64c4cb" name="更改" comment="feat(ui): 添加文本编辑器字体大小调整功能&#10;&#10;- 增加通过鼠标滚轮和 Ctrl键组合调整字体大小的功能&#10;- 设置初始字体大小为 12 点&#10;- 优化了文本编辑器的字体显示">
+      <change afterPath="$PROJECT_DIR$/resources/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ui/tool_menu/todolist_ui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/db_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/tool_menu/text_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/tool_menu/text_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/img/CSS3.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/img/CSS3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/img/HTML5.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/img/HTML5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/img/JavaScript.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/img/JavaScript.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/img/Python.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/img/Python.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/img/doc_plaintext.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/img/doc_plaintext.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/img/php.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/img/php.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/img/sql.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/img/sql.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/img/tolowercase.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/img/tolowercase.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/img/touppercase.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/img/touppercase.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/tool_bar/code_tool_bar_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/tool_bar/code_tool_bar_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/tool_bar/text_tool_bar_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/tool_bar/text_tool_bar_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/common_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/common_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/db_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/db_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,21 +62,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.home_page.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.test.executor": "Debug",
-    "Python.todolist_ui.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "dev",
-    "last_opened_file_path": "/home/lark/PycharmProjects/Lark_Utils/res/img",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.home_page.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.todolist_ui.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/lark/PycharmProjects/Lark_Utils/resources/img&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/img" />
       <recent name="$PROJECT_DIR$/res/img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -164,8 +177,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.todolist_ui" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.todolist_ui" />
         <item itemvalue="Python.home_ui" />
       </list>
     </recent_temporary>
@@ -258,7 +271,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731314242849</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat(database): 添加数据库连接和表结构初始化功能&#10;&#10;- 新增 db_utils.py 文件，实现数据库连接和表结构初始化&#10;- 在 main.py 中调用数据库初始化函数&#10;- 更新 text_ui.py 中的日期输入处理方式">
+      <option name="closed" value="true" />
+      <created>1731378664419</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1731378664419</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat(ui): 添加文本编辑器字体大小调整功能&#10;&#10;- 增加通过鼠标滚轮和 Ctrl键组合调整字体大小的功能&#10;- 设置初始字体大小为 12 点&#10;- 优化了文本编辑器的字体显示">
+      <option name="closed" value="true" />
+      <created>1731401034126</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1731401034126</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -295,14 +324,16 @@
     <MESSAGE value="refactor(gui): 重构 GUI应用程序结构&#10;&#10;- 创建新的 TextPage 类，将文本处理功能从 MainWindow 中分离&#10;- 新增 __init__.py 文件，初始化日志记录- 修改 home_page.py，使用新的 TextPage 类&#10;- 重写 main.py，使用新的 HomePage 类- 新增 text_page.py 文件，定义 TextPage 类" />
     <MESSAGE value="refactor(gui): 重构 GUI应用程序结构&#10;&#10;- 创建新的 TextPage 类，将文本处理功能从 MainWindow 中分离&#10;- 新增 __init__.py 文件，初始化日志记录&#10;- 修改 home_page.py，使用新的 TextPage 类&#10;- 重写 main.py，使用新的 HomePage 类&#10;- 新增 text_page.py 文件，定义 TextPage 类- 添加工具栏功能，实现文本大小写转换&#10;- 优化菜单栏，增加查看菜单" />
     <MESSAGE value="feat(gui): 添加代码工具栏并实现语法高亮&#10;&#10;- 新增 CodeToolbar 类，提供 Python 和 SQL 代码的语法高亮功能- 在主界面添加代码工具栏，支持切换语法高亮模式- 实现了 Python 和 SQL语法高亮的具体逻辑&#10;-优化了菜单栏，增加了查看菜单以控制工具栏的显示" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(gui): 添加代码工具栏并实现语法高亮&#10;&#10;- 新增 CodeToolbar 类，提供 Python 和 SQL 代码的语法高亮功能- 在主界面添加代码工具栏，支持切换语法高亮模式- 实现了 Python 和 SQL语法高亮的具体逻辑&#10;-优化了菜单栏，增加了查看菜单以控制工具栏的显示" />
+    <MESSAGE value="feat(database): 添加数据库连接和表结构初始化功能&#10;&#10;- 新增 db_utils.py 文件，实现数据库连接和表结构初始化&#10;- 在 main.py 中调用数据库初始化函数&#10;- 更新 text_ui.py 中的日期输入处理方式" />
+    <MESSAGE value="feat(ui): 添加文本编辑器字体大小调整功能&#10;&#10;- 增加通过鼠标滚轮和 Ctrl键组合调整字体大小的功能&#10;- 设置初始字体大小为 12 点&#10;- 优化了文本编辑器的字体显示" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): 添加文本编辑器字体大小调整功能&#10;&#10;- 增加通过鼠标滚轮和 Ctrl键组合调整字体大小的功能&#10;- 设置初始字体大小为 12 点&#10;- 优化了文本编辑器的字体显示" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>25</line>
+          <line>27</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

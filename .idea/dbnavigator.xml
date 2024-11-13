@@ -12,11 +12,11 @@
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
-    <show-object-properties value="true" />
+    <show-object-properties value="false" />
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="17e5cd32-b660-46ee-ac1a-69bb4f2389b2">
+    <connection id="5b88202b-7b3e-4932-b690-ec721a2427f9">
       <console name="Connection" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
@@ -24,25 +24,14 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="17e5cd32-b660-46ee-ac1a-69bb4f2389b2" object-ref="consoles/Connection" />
-      <object connection-id="17e5cd32-b660-46ee-ac1a-69bb4f2389b2" object-ref="schemas/main/tables/text_history" />
-      <object connection-id="17e5cd32-b660-46ee-ac1a-69bb4f2389b2" object-ref="schemas/main/tables/configurations" />
-      <object connection-id="17e5cd32-b660-46ee-ac1a-69bb4f2389b2" object-ref="schemas/main/tables/sqlite_sequence" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="17e5cd32-b660-46ee-ac1a-69bb4f2389b2" />
+    <connection id="5b88202b-7b3e-4932-b690-ec721a2427f9" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="17e5cd32-b660-46ee-ac1a-69bb4f2389b2" dataset="main.text_history" active-filter-id="b3a0bb1e-ed3d-4c5a-8509-5449d41ad4ea">
-      <filter id="b3a0bb1e-ed3d-4c5a-8509-5449d41ad4ea" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND" />
-    </filter-actions>
-    <filter-actions connection-id="17e5cd32-b660-46ee-ac1a-69bb4f2389b2" dataset="main.configurations" active-filter-id="20656dbe-4409-42bd-b0a9-e8f4a51dfa6c">
-      <filter id="20656dbe-4409-42bd-b0a9-e8f4a51dfa6c" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND" />
-    </filter-actions>
-    <filter-actions connection-id="17e5cd32-b660-46ee-ac1a-69bb4f2389b2" dataset="main.sqlite_sequence" active-filter-id="f6da6726-6c5c-4801-81f9-9dfa55331ea8">
-      <filter id="f6da6726-6c5c-4801-81f9-9dfa55331ea8" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND" />
+    <filter-actions connection-id="5b88202b-7b3e-4932-b690-ec721a2427f9" dataset="main.text_history" active-filter-id="f37c7941-2f7e-43e7-96e2-2df1cccac5d9">
+      <filter id="f37c7941-2f7e-43e7-96e2-2df1cccac5d9" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND" />
     </filter-actions>
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
@@ -62,7 +51,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="17e5cd32-b660-46ee-ac1a-69bb4f2389b2" active="true" signed="true">
+      <connection id="5b88202b-7b3e-4932-b690-ec721a2427f9" active="true" signed="true">
         <database>
           <name value="Connection" />
           <description value="" />

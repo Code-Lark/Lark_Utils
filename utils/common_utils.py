@@ -1,6 +1,7 @@
 import subprocess
 import platform
-
+import sys
+import os
 
 def send_notification(title, message):
     """
@@ -31,3 +32,14 @@ def send_notification(title, message):
     else:
         # 当系统不支持时，打印错误信息
         print(f"Unsupported platform: {system}")
+
+
+
+
+#生成资源文件目录访问路径
+def resource_path(relative_path):
+    if getattr(sys, 'frozen', False): #是否Bundle Resource
+        base_path = sys._MEIPASS
+    else:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)

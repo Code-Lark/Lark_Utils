@@ -1,5 +1,9 @@
+import os
+
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QToolBar, QAction, qApp
+
+from utils.common_utils import resource_path
 
 
 class TextToolbar(QToolBar):
@@ -12,12 +16,12 @@ class TextToolbar(QToolBar):
 
     def initUI(self):
         # 转大写
-        toUpperAct = QAction(QIcon('./res/img/touppercase'), '转大写', self)
+        toUpperAct = QAction(QIcon(resource_path(os.path.join("resources/img","touppercase.png"))), '转大写', self)
         toUpperAct.setShortcut('Ctrl+U')
         toUpperAct.triggered.connect(self.to_upper)
 
         # 转小写
-        toLowerAct = QAction(QIcon('./res/img/tolowercase'), '转小写', self)
+        toLowerAct = QAction(QIcon(resource_path(os.path.join("resources/img","tolowercase.png"))), '转小写', self)
         toLowerAct.setShortcut('Ctrl+L')
         toLowerAct.triggered.connect(self.to_lower)
 

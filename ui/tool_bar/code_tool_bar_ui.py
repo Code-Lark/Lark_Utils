@@ -1,9 +1,12 @@
+import os
+
 from PyQt5.QtCore import QTimer
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QToolBar, QAction
 
 from highlighter.python_highlighter import PythonHighlighter
 from highlighter.sql_highlighter import SqlHighlighter
+from utils.common_utils import resource_path
 
 
 class CodeToolbar(QToolBar):
@@ -18,12 +21,13 @@ class CodeToolbar(QToolBar):
 
     def initUI(self):
         # python 代码高亮
-        python_act = QAction(QIcon('./res/img/Python.png'), 'Python高亮', self)
+        # python_act = QAction(QIcon('./resources/img/Python.png'), 'Python高亮', self)
+        python_act = QAction(QIcon(resource_path(os.path.join("resources/img","Python.png"))), 'Python高亮', self)
         python_act.triggered.connect(self.code_highlight_python)
         self.addAction(python_act)
 
         # sql 代码高亮
-        sql_act = QAction(QIcon('./res/img/sql.png'), 'SQL高亮', self)
+        sql_act = QAction(QIcon(resource_path(os.path.join("resources/img","sql.png"))), 'SQL高亮', self)
         sql_act.triggered.connect(self.code_highlight_sql)
         self.addAction(sql_act)
 
